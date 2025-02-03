@@ -1,8 +1,14 @@
 # Changelog
 
+## [1.13.3] - 2025-02-03
+
+### Added
+
+* Release workflow for automated builds. (Leonardo Buoncompagni)
+
 ## [1.13.2] - 2025-01-06
 
-## Fixed
+### Fixed
 
 * Try another clipboard backend to try to fix cross platform issues. (Mag
   Mell, #226)
@@ -159,7 +165,7 @@ local vault with the necessary new data.*
 * `rbw get --clipboard` to copy the result to the clipboard instead of
   displaying it on stdout. (eatradish, #120)
 * Background syncing now additionally happens when the server notifies the
-  agent of password updates, instead of needing to wait for the 
+  agent of password updates, instead of needing to wait for the
   `sync_interval` timer. (Bernd Schoolman, #115)
 * New helper script `rbw-pinentry-keyring` which can be used as an alternate
   pinentry program (via `rbw config set pinentry rbw-pinentry-keyring`) to

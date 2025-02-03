@@ -19,8 +19,13 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y curl git tar bash gh
+          if [ "$RUNNER_OS" == "macOS" ]; then
+            brew install curl git bash gh
+          elif [ "$RUNNER_OS" != "Linux" ]; then
+            echo "$RUNNER_OS not supported"
+            exit 1
+          fi
+        shell: bash
 
       - uses: actions/checkout@v4
       - uses: taiki-e/create-gh-release-action@v1
@@ -53,8 +58,13 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install -y curl git tar bash gh
+          if [ "$RUNNER_OS" == "macOS" ]; then
+            brew install curl git bash gh
+          elif [ "$RUNNER_OS" != "Linux" ]; then
+            echo "$RUNNER_OS not supported"
+            exit 1
+          fi
+        shell: bash
 
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
